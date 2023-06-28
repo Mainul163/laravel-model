@@ -15,6 +15,7 @@
                     @endif
 
                     <a href="{{url('students')}}" class="btn btn-success">students</a>
+                    <a href="{{url('category')}}" class="btn btn-success">Category</a>
                 </div>
             </div>
         </div>

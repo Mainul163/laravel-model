@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\StudentsController;
+use App\Http\Controllers\admin\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +22,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('students', StudentsController::class);
+Route::resource('category', CategoryController::class);
