@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Category;
+use Illuminate\Support\Str;
 class CategoryController extends Controller
 {
     /**
@@ -29,6 +30,7 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        return view('admin.category.create');
     }
 
     /**
@@ -40,6 +42,22 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+       $request->validate([
+            'category_name' => 'required|unique:categories|max:255',
+         
+        ]);
+          $category=new Category;
+
+          $category->category_name=$request->category_name;
+
+        //   $category->category_slug = Str::of($request->category_name)->slug('-');
+
+          $category->save();
+
+          return redirect()->back();
+
+        // dd($request->all());
+
     }
 
     /**

@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Category') }}</div>
 
                 <div class="card-body">
-                    <a href="{{url('category')}}" class="btn btn-success"> Add Category</a>
+                    <a href="{{route('category.create')}}" class="btn btn-success"> Add Category</a>
                     <br>
                     <br>
                     <br>
