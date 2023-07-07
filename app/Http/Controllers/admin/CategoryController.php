@@ -46,6 +46,8 @@ class CategoryController extends Controller
             'category_name' => 'required|unique:categories|max:255',
          
         ]);
+
+        // ************* save method ***************
           $category=new Category;
 
           $category->category_name=$request->category_name;
@@ -54,9 +56,20 @@ class CategoryController extends Controller
 
           $category->save();
 
+
+  // ************* insert  method ***************
+
+        Category::insert([
+         'category_name'=> $request->category_name,
+        //  'category_slug'=>Str::of($request->category_name)->slug('-')
+          
+
+        ]);
+
+
           return redirect()->back();
 
-        // dd($request->all());
+     
 
     }
 
