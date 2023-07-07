@@ -9,3 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 }
+
+// ************ jode table name singular hoi ************
+
+// protected $table = 'my_flight';
