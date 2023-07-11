@@ -59,12 +59,12 @@ class CategoryController extends Controller
 
   // ************* insert  method ***************
 
-        Category::insert([
-         'category_name'=> $request->category_name,
+        // Category::insert([
+        //  'category_name'=> $request->category_name,
         //  'category_slug'=>Str::of($request->category_name)->slug('-')
           
 
-        ]);
+        // ]);
 
 
           return redirect()->back();
@@ -93,6 +93,12 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
+        // ******* first method *******
+        // $data=Category::where('id',$id)->first();
+
+
+        $data=Category::find($id);
+        return view('admin.category.edit',compact('data'));
     }
 
     /**
@@ -105,6 +111,20 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+            $category=Category::find($id);
+            $category->update([
+                'category_name'=>$request->category_name,
+                 //  'category_slug'=>Str::of($request->category_name)->slug('-')
+            ]);
+
+
+            // ******* save method ********
+            // $category->category_name=$request->category_name;
+            // $category->category_slug=Str::of($request->category_name)->slug('-');
+            // $category->save();
+            
+            return redirect()->route('category.index');
+
     }
 
     /**
