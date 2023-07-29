@@ -59,15 +59,16 @@ class CategoryController extends Controller
 
   // ************* insert  method ***************
 
-        Category::insert([
-         'category_name'=> $request->category_name,
+        // Category::insert([
+        //  'category_name'=> $request->category_name,
         //  'category_slug'=>Str::of($request->category_name)->slug('-')
           
 
-        ]);
+        // ]);
 
 
-          return redirect()->back();
+        $notification=array('messege'=>"category Inserted !","alert-type"=>"success");
+        return redirect()->back()->with('message','notification');
 
      
 
