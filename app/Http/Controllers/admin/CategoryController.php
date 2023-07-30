@@ -67,8 +67,9 @@ class CategoryController extends Controller
         // ]);
 
 
-        $notification=array('messege'=>"category Inserted !","alert-type"=>"success");
-        return redirect()->back()->with('message','notification');
+       
+
+        return redirect()->back()->with('success','successfully inserted');
 
      
 

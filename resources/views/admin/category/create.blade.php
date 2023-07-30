@@ -5,13 +5,22 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                @if (session('status'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
+                @endif
                 <div class="card-header">{{ __('Category') }}</div>
 
                 <div class="card-body">
                     <a href="{{route('category.index')}}" class="btn btn-success"> All Category</a>
                     <br>
                     <br>
+                    @if(session()->has('success'))
+                    <strong class="text-success">{{session()->get('success')}}</strong>
+                    @endif
                     <br>
+
                     <form action="{{route('category.store')}}" method='post'>
                         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                         <div class="mb-3">
@@ -32,5 +41,9 @@
         </div>
     </div>
 </div>
-
+@if(session()->has('success'))
+<script>
+toastr.success("{{Session::get('message')}}");
+</script>
+@endif
 @endsection

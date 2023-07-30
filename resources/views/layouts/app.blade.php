@@ -83,11 +83,9 @@
             @yield('content')
         </main>
     </div>
-    <script src="{{ asset('js/toastr.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
-        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ asset('js/toastr.min.js') }}"></script>
     <!-- <script>
     @if(Session::has('messege'))
     var type = "{{session::get('alert-type','info')}}"
@@ -111,11 +109,14 @@
     @endif
     </script> -->
     <script>
-    @if(Session::has('message'))
+    @if(Session::has('success'))
 
+    toastr.success("{{ Session::get('success')}}")
+    @endif
 
-    toastr.success("{{Session::get('message')}}");
+    @if(Session::has('info'))
 
+    toastr.info("{{ Session::get('info')}}")
     @endif
     </script>
 </body>
