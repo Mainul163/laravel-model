@@ -16,9 +16,7 @@
                     <a href="{{route('category.index')}}" class="btn btn-success"> All Category</a>
                     <br>
                     <br>
-                    @if(session()->has('success'))
-                    <strong class="text-success">{{session()->get('success')}}</strong>
-                    @endif
+
                     <br>
 
                     <form action="{{route('category.store')}}" method='post'>
@@ -41,9 +39,5 @@
         </div>
     </div>
 </div>
-@if(session()->has('success'))
-<script>
-toastr.success("{{Session::get('message')}}");
-</script>
-@endif
+
 @endsection

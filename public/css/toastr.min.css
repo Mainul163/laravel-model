@@ -162,16 +162,16 @@ button.toast-close-button {
     background-color: #030303;
 }
 .toast-success {
-    background-color: #51a351;
+    background-color: #51a351 !important;
 }
 .toast-error {
-    background-color: #bd362f;
+    background-color: #bd362f !important;
 }
 .toast-info {
-    background-color: #2f96b4;
+    background-color: #2f96b4 !important;
 }
 .toast-warning {
-    background-color: #f89406;
+    background-color: #f89406 !important;
 }
 .toast-progress {
     position: absolute;
@@ -226,3 +226,7 @@ button.toast-close-button {
         padding: 15px 50px 15px 15px;
     }
 }
+
+/* .toast.toast-success {
+    background-color: #000 !important;
+} */

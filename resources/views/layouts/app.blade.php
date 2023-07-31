@@ -110,7 +110,10 @@
     </script> -->
     <script>
     @if(Session::has('success'))
-
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true
+    }
     toastr.success("{{ Session::get('success')}}")
     @endif
 
